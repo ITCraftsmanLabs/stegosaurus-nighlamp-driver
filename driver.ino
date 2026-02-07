@@ -13,7 +13,7 @@
 using namespace httpsserver;
 
 #define TRIGGER_DELAY 1 // milliseconds to wait for bouncing to stop
-#define TRIGGER_INSENSITIVITY 3 // milliseconds to wait before a new input chage considered new after another
+#define TRIGGER_INSENSITIVITY 3 // milliseconds to wait before a new input change considered new after another
 #define COLOR_CHANGE_STEP 5 // amount fo color change in a single step
 #define FASTLED_DELAY 20 // milliseconds delay between FastLED executions
 
@@ -38,8 +38,8 @@ using namespace httpsserver;
 #define MODE_BUTTON 11 // pin of the mode push button
 #define ONOFF_BUTTON 12 // pin of the on-off push butto
 
-#define MQTT_SERVER "homeassistant.local" // host of the mqtt server
-#define MQTT_PORT 1883 // port of the MQTT server
+#define MQTT_SERVER "homeassistant.local" // host of the mqtt broker
+#define MQTT_PORT 1883 // port of the MQTT broker
 #define MQTT_TOPIC "stegomqtt/01" // MQTT topic where the status data is published
 
 CRGB leds[NUM_LEDS];
