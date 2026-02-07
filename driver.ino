@@ -12,36 +12,35 @@
 
 using namespace httpsserver;
 
-#define TRIGGER_DELAY 1
-#define TRIGGER_INSENSITIVITY 3
-#define COLOR_CHANGE_STEP 5
-#define FASTLED_DELAY 20
+#define TRIGGER_DELAY 1 // milliseconds to wait for bouncing to stop
+#define TRIGGER_INSENSITIVITY 3 // milliseconds to wait before a new input chage considered new after another
+#define COLOR_CHANGE_STEP 5 // amount fo color change in a single step
+#define FASTLED_DELAY 20 // milliseconds delay between FastLED executions
 
-#define NUM_LEDS 13
-#define LED_PIN 4
+#define NUM_LEDS 13 // number of LEDs in the LED strip
+#define LED_PIN 4 // pin of the data for the WS2812B LEDs
 
-#define RGB_BUILTIN 48
-#define BUILTIN_LED_STRENGTH 10
+#define RGB_BUILTIN 48 // pin of the built in LED
+#define BUILTIN_LED_STRENGTH 10 // strenght of the built in LED
 
-#define RED_CLK 5
-#define RED_DATA 6
-#define RED_BUTTON 7
-#define GREEN_CLK 15
-#define GREEN_DATA 16
-#define GREEN_BUTTON 17
-#define BLUE_CLK 18
-#define BLUE_DATA 8
-#define BLUE_BUTTON 3
-#define BRIGHTNESS_CLK 46
-#define BRIGHTNESS_DATA 9
-#define BRIGHTNESS_BUTTON 10
-#define MODE_BUTTON 11
-#define ONOFF_BUTTON 12
+#define RED_CLK 5 // clock pin of the rotary encoder controlling color red
+#define RED_DATA 6 // data pin of the rotary encoder controlling color red
+#define RED_BUTTON 7 // pin of the push button on rotary encoder controlling color red
+#define GREEN_CLK 15 // clock pin of the rotary encoder controlling color green
+#define GREEN_DATA 16 // data pin of the rotary encoder controlling color green
+#define GREEN_BUTTON 17 // pin of the push button on rotary encoder controlling color green
+#define BLUE_CLK 18 // clock pin of the rotary encoder controlling color blue
+#define BLUE_DATA 8 // data pin of the rotary encoder controlling color blue
+#define BLUE_BUTTON 3 // pin of the push button on rotary encoder controlling color blue
+#define BRIGHTNESS_CLK 46 // clock pin of the rotary encoder controlling brightness
+#define BRIGHTNESS_DATA 9 // data pin of the rotary encoder controlling brightness
+#define BRIGHTNESS_BUTTON 10 // pin of the push button on rotary encoder controlling brightness
+#define MODE_BUTTON 11 // pin of the mode push button
+#define ONOFF_BUTTON 12 // pin of the on-off push butto
 
-#define MQTT_SERVER "homeassistant.local"
-#define MQTT_PORT 1883
-#define MQTT_TOPIC "stegomqtt/01"
-
+#define MQTT_SERVER "homeassistant.local" // host of the mqtt server
+#define MQTT_PORT 1883 // port of the MQTT server
+#define MQTT_TOPIC "stegomqtt/01" // MQTT topic where the status data is published
 
 CRGB leds[NUM_LEDS];
 uint8_t startHue = 0;
